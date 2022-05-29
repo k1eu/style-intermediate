@@ -1,0 +1,47 @@
+@import '../../stylesheets/config'
+
+.card
+  +container
+  background-color: $color-white
+  margin-top: $m-lg
+  padding:
+    top: $m-base
+    bottom: $m-base
+
+  &__stories
+    display: grid
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr))
+    grid-gap: $m-base
+
+  &__story
+    &-title
+      color: $color-border
+      font-size: $font-size-lg
+      font-weight: $font-weight-bold
+
+    &-text
+      font-size: $font-size-sm
+      margin-top: $m-base
+
+    &-action
+      +flex-container(row, flex-start, center)
+      gap: $m-xs
+
+    &-CTA-horizontal
+      width: 40px
+      height: 3px
+      background-color: $color-danger
+
+    &-CTA
+      color: $color-danger
+
+    &-icon
+      width: 2px
+      height: 2px
+      background-color: $color-border
+      border-radius: 50%
+
++media-breakpoint-up(lg)
+  .card
+    &__stories
+      padding-inline: $m-2xl

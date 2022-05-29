@@ -1,0 +1,109 @@
+@import '../../stylesheets/config'
+
+.jumbotron
+  +flex-container(column-reverse)
+  +container
+  color: white
+  gap: $m-base
+  margin-top: $m-lg
+  position: relative
+
+  &__aside
+    left: -220px
+    top: $m-lg
+    position: absolute
+    transform-origin: right top
+    transform: rotate(-90deg)
+
+  &__left
+    +flex-container(column)
+    gap: $m-lg
+    flex: 1 1 50%
+
+  &__right
+    flex: 1 1 50%
+    
+  &__image
+    height: auto
+    margin-top: $m-2xl + $m-sm
+    margin-inline: auto
+    max-width: 50%
+    position: relative
+    z-index: 1000
+
+  &__phrase
+    font-size: $font-size-3xl
+    font-weight: 300
+    letter-spacing: $m-xxs
+
+  &__paragraph
+    border-left: 1px solid $color-border
+    max-width: 80%
+    padding-left: $m-lg
+
+  &__CTA
+    border-bottom: 3px solid $color-danger
+    color: white
+    font-weight: $font-weight-bold
+    padding-bottom: $m-sm
+    width: max-content
+
+  &__accent-text
+    color: $color-border
+    font-weight: 300
+    font-size: 200px
+    position: absolute
+    right: 0
+    top: -$m-base
+    z-index: 100
+
+  &__pagination
+    +flex-container(row, flex-end, center)
+    gap: $m-xs
+    margin-top: $m-xl
+
+  &__pagination-arrow
+    display: block
+    border: 1px solid $color-border
+    border-radius: $m-base * 0.5
+    cursor: pointer
+    height: $m-base
+    width: $m-base
+
+    &:hover
+      border-color: $color-white
+
+  &__pagination-item
+    background-color: $color-border
+    cursor: pointer
+    display: block
+    height: 3px
+    width: 40px
+
+    &:hover
+      background-color: $color-white
+
+    &.-active
+      background-color: $color-white
+
++media-breakpoint-up(md)
+  .jumbotron
+    +flex-container(row)
+    padding-inline: $m-2xl
+    gap: 0
+    margin-top: $m-xl  
+
+    &__aside
+      bottom: $m-sm
+      top: unset 
+      left: $m-sm
+      transform-origin: 0 0
+      transform: rotate(-90deg)
+
+    &__left
+      gap: $m-2xl
+
++media-breakpoint-up(xxl)
+  .jumbotron
+    &__accent-text
+      right: -$m-xl
