@@ -1,0 +1,163 @@
+=box-shadow-200($color)
+  box-shadow: 0 $m-xxs $m-xs rgba($color, .1)
+
+=box-shadow-300($color)
+  box-shadow: 0 $m-xxs $m-x rgba($color, .2)
+
+=box-shadow-400($color)
+  box-shadow: 0 $m-x $m-md rgba($color, .2)
+
+=sidebar-shadow($color)
+  box-shadow: $m-xxs 0 $m-sm rgba($color, .05)
+
+// DEPRECATED - you should not use floats for columns anymore
+=clearfix
+  &:after
+    clear: both
+    content: ''
+    display: table
+
+=cleared-button
+  background-color: transparent
+  border: none
+  cursor: pointer
+  outline: none
+
+=ellipsis
+  overflow: hidden
+  text-overflow: ellipsis
+  white-space: nowrap
+
+// UNOFF - watch the browser support for this one here https://caniuse.com/#search=line-clamp
+=ellipsis-multiline($lines: 3)
+  /* autoprefixer: ignore next */
+  -webkit-box-orient: vertical
+  -webkit-line-clamp: $lines
+  display: -webkit-box
+  overflow: hidden
+
+// experimental hover device detection, if you use this IE will not get any hovers
+=hover
+  @media (hover: hover) and (pointer: fine)
+    &:hover
+      @content
+
+=list-unstyled
+  list-style: none
+  padding-left: 0
+
+=pseudoelement
+  bottom: 0
+  content: ''
+  left: 0
+  position: absolute
+  right: 0
+  top: 0
+
+=focus
+  &:focus
+    outline: 2px dashed $color-primary
+    outline-offset: 2px
+
+  &:focus:not(:focus-visible)
+    outline: none
+
+  &:focus-visible
+    outline: 2px dashed $color-secondary-700
+    outline-offset: 2px
+
+=transition($property...)
+  transition-property: $property
+  transition-duration: $transition-duration
+  transition-timing-function: $transition-function
+
+=flex-container($direction, $justify-content: false, $align-items: false )
+  display: flex
+  flex-direction: $direction
+  @if $justify-content
+    justify-content: $justify-content
+  @if $align-items
+    align-items: $align-items
+
+=sidebar-item
+  +flex-container(row, flex-start, center)
+  color: $color-font-secondary
+  cursor: pointer
+  height: $m-lg + $m-xs
+  padding-left: $m-md + $m-xs
+  position: relative
+  text-decoration: none
+  transition: background-color $transition-duration $transition-function
+
+  &:not(:last-child)
+    margin-bottom: $m-xs
+
+  &:hover
+    &::after
+      animation: 200ms fadeIn ease-in
+      background: $color-primary
+      content: ""
+      display: block
+      height: 100%
+      position: absolute
+      right: 0
+      transition: background-color $transition-duration $transition-function
+      width: 2px
+
+  &__attention-mark
+      background-color: $color-success
+      border-radius: 50%
+      height: $m-x
+      left: 34px
+      position: absolute
+      top: $m-x
+      visibility: hidden
+      width: $m-x
+
+  &__icon
+    fill: $color-font-secondary
+    
+    path
+      fill: $color-font-secondary
+
+  &__text
+    font-weight: $font-weight-medium
+    margin-left: $m-sm 
+    transition: visibility 200ms $transition-function
+    white-space: nowrap
+
+    &.-hidden 
+      visibility: hidden
+
+=modal-close-button
+  border-radius: $border-radius-sm * 0.5
+  color: $color-primary
+  padding: 0
+  position: absolute
+  right: $m-lg
+  top: $m-lg
+
+  &:hover
+      background-color: darken($color-background, 4%)
+      transition: all $transition-duration * 0.5 $transition-function
+
+=link-unstyled
+  color: inherit
+  text-decoration: none
+
+  &:hover
+    color: inherit
+    text-decoration: none
+
+  &:active
+    color: inherit
+
+  &:visited
+    color: inherit
+
+=button-unstyled
+  border: none
+  background-color: transparent
+  
+  &:focus
+    outline: none

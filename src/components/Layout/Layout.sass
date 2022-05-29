@@ -1,0 +1,51 @@
+@import '../../stylesheets/config'
+
+.main
+  +flex-container(column)
+  background-color: $color-neutral-800
+  min-height: 100vh
+
+.header
+  +flex-container(column, flex-start, center)
+  +container
+  color: $color-white
+  padding-top: $m-sm
+
+  &__nav
+    +flex-container(row, flex-start, center)
+    gap: $m-sm
+
+  &__nav-links
+    +flex-container(row)
+    gap: $m-sm
+
+  &__nav-link
+    color: $color-white
+    padding-bottom: $m-xs
+
+    &:hover
+      border-bottom: 1px solid $color-border
+      color: $color-white
+  
+  &__nav-search
+    background-color: $color-neutral-800
+    border: 2px solid darken($color-border, 20)
+    border-radius: $border-radius-base
+    color: $color-white
+    padding: $m-xs
+
+    &:focus
+      box-shadow: 0
+      outline: none !important
+      border-color: darken($color-white, 20)
+
+.footer
+  +container
+  color: $color-white
+  margin-top: auto
+
+
++media-breakpoint-up(md)
+  .header
+    +flex-container(row, space-between)
+    padding-top: $m-base

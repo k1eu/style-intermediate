@@ -1,0 +1,122 @@
+//----- fonts sizes ----------------------------------------------------------------------------------------------------
+$font-size-xxxs: 10px
+$font-size-xxs: 12px
+$font-size-xs: 14px
+$font-size-sm: 16px
+$font-size-base: 18px
+$font-size-lg: 20px
+$font-size-2lg: 24px
+$font-size-xl: 28px
+$font-size-2xl: 32px
+$font-size-3xl: 48px
+
+//----- spacings (margins/paddings) ------------------------------------------------------------------------------------
+$m-xxs: 4px
+$m-xs: 8px
+$m-x: $m-xs + $m-xxs // 12px
+$m-sm: $m-xs * 2 // 16px
+$m-base: $m-xs * 3 // 24px
+$m-md: $m-sm * 2 // 32px
+$m-lg: $m-base * 2 // 48px
+$m-xl: $m-base * 3 // 72px
+$m-2xl: $m-base * 4 // 96px
+
+//----- line heights ---------------------------------------------------------------------------------------------------
+$line-height-sm: 1
+$line-height-base: 1.25
+$line-height-lg: 1.5
+
+//----- border radiuses ------------------------------------------------------------------------------------------------
+$border-radius-xs: $m-xxs
+$border-radius-sm: $m-xs
+$border-radius-s: $m-sm
+$border-radius-base: $m-base
+$border-radius-lg: $m-lg
+
+//----- breakpoints ----------------------------------------------------------------------------------------------------
+$grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1440px)
+
+$grid-columns: 12
+$grid-gutter-width: $m-base
+
+$container: map-get($grid-breakpoints, xl)
+
+//----- colors ---------------------------------------------------------------------------------------------------------
+$font-primary: #3C4258
+$font-secondary: #5B6486
+
+$color-primary: #005994
+$color-primary-600: #0068AD
+$color-primary-500: #06508F
+$color-primary-200: #E5EEF4
+
+$color-secondary-700: #ED7700
+$color-secondary-600: #FF8F1F
+$color-secondary-200: #FEF6EF
+
+$color-font-primary: #454C66
+$color-font-secondary: #6A6E7C
+
+$color-success: #29C08F
+$color-warning: #FBD300
+$color-danger: #FB3B40
+$color-info: #5985F8
+
+$color-white: #ffffff
+$color-neutral-300: #DADDE6
+$color-neutral-500: #F0F2F7
+$color-neutral-600: #D5DEED
+$color-neutral-700: #5B6486
+$color-neutral-800: #3C4258
+$color-black: #231F28
+
+$color-disabled: #D7DAE1
+$color-background: $color-neutral-500
+$color-border: $color-neutral-600
+$color-border-disabled: $color-neutral-300
+$color-border-hover: $color-neutral-700
+$color-background-success: #E9F9F4
+$color-background-warning: #FFFBE4
+$color-background-danger: #FFEBEB
+
+$welcome-banner-layer-color: rgba(0, 89, 148, 0.80)
+$lesson-card-action-btn-color: rgba(0, 89, 148, 0.65)
+$notification-box-shadow-color: rgba(0, 89, 148, 0.1)
+$rubrics-edit-shadow-color: rgba(69, 76, 102, 0.2)
+$shadow-200: 0px 4px 8px rgba(69, 76, 102, 0.1)
+$shadow-300: 0px 4px 12px rgba(69, 76, 102, 0.2)
+
+//----- fonts ----------------------------------------------------------------------------------------------------------
+$font-family-header: 'Lora'
+$font-family-body: 'Montserrat'
+$font-stack-header: $font-family-header, sans-serif
+$font-stack-body: $font-family-body, serif
+
+$font-weight-regular: 400
+$font-weight-medium: 500
+$font-weight-bold: 700
+
+//----- transitions ----------------------------------------------------------------------------------------------------
+$transition-duration: .3s
+$transition-function: ease-in-out
+
+//----- z-indexes ------------------------------------------------------------------------------------------------------
+$z-negative: -1
+$z-lowest: 1
+$z-lower: 30
+$z-low: 40
+$z-base: 50
+$z-medium: 60
+$z-high: 70
+$z-higher: 80
+$z-highest: 90
+
+//----- Icons ----------------------------------------------------------------------------------------------------------
+$icon-size-xxs: $m-x
+$icon-size-xs: $m-sm
+$icon-size: $m-base
+$icon-size-md: $m-md
+$icon-size-lg: $m-lg
+
+//----- layout ---------------------------------------------------------------------------------------------------------
+$layout-max-width: $container
